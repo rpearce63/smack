@@ -170,7 +170,7 @@
                                 <rect key="frame" x="331" y="28" width="28" height="28"/>
                                 <state key="normal" image="closeButton"/>
                                 <connections>
-                                    <action selector="loginPressed:" destination="5aZ-Ec-XJT" eventType="touchUpInside" id="OEN-WT-Nnd"/>
+                                    <action selector="closePressed:" destination="5aZ-Ec-XJT" eventType="touchUpInside" id="6PX-Pr-Fi0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubQ-OS-1Dg">
@@ -283,7 +283,6 @@
                                 <state key="normal" image="closeButton"/>
                                 <connections>
                                     <action selector="closePressed:" destination="eEE-6P-yE0" eventType="touchUpInside" id="mFp-Q7-wjT"/>
-                                    <action selector="loginPressed:" destination="5aZ-Ec-XJT" eventType="touchUpInside" id="B7n-8N-27k"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfo-rh-Ktx">

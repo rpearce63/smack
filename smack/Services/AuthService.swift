@@ -75,12 +75,10 @@ class AuthService {
             if response.result.error == nil {
                 // Using SwiftyJSON
                 guard let data = response.data else { return }
-                if let json = try? JSON(data: data) {
-                    self.userEmail = json["user"].stringValue
-                    self.authToken = json["token"].stringValue
-                }
+                let json = try! JSON(data: data)
+                self.userEmail = json["user"].stringValue
+                self.authToken = json["token"].stringValue
                 
-                 
                 self.isLoggedIn = true
                 
                 completion(true)

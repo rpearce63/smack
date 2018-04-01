@@ -8,13 +8,15 @@
 
 import Foundation
 
-struct Channel : Decodable {
-    
-    public private(set) var _id : String!
-    public private(set) var name : String!
-    public private(set) var description  : String!
-    public private(set) var __v : Int?
-    
-    
+struct Channel: Codable {
+    var id: String
+    var description: String
+    var name: String
+    var v: Int
+    private enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case description
+        case name
+        case v = "__v"
+    }
 }
-

@@ -16,9 +16,10 @@ class SocketService: NSObject {
         super.init()
     }
     
-    var socket = SocketManager(socketURL: URL(string: BASE_URL)!).defaultSocket
+    var socket : SocketIOClient = SocketIOClient(socketURL: URL(string: BASE_URL)!)
     
     func establishConnection() {
+        print("connect socket")
         socket.connect()
     }
     
@@ -28,11 +29,13 @@ class SocketService: NSObject {
     
     func addChannel(channelName: String, channelDescription: String, completion: @escaping CompletionHandler) {
         socket.emit("newChannel", channelName, channelDescription)
+        print("emit newChannel")
         completion(true)
     }
     
     func getChannel(completion: @escaping CompletionHandler) {
         socket.on("channelCreated") { (dataArray, ack) in
+            print("on channelCreated")
             guard let channelName = dataArray[0] as? String else { return }
             guard let channelDescription = dataArray[1] as? String else { return }
             guard let channelId = dataArray[2] as? String else { return }

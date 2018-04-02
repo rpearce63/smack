@@ -75,7 +75,7 @@ class AuthService {
             if response.result.error == nil {
                 // Using SwiftyJSON
                 guard let data = response.data else { return }
-                let json = try! JSON(data: data)
+                let json = JSON(data: data)
                 self.userEmail = json["user"].stringValue
                 self.authToken = json["token"].stringValue
                 
@@ -130,16 +130,15 @@ class AuthService {
     }
     
     func setUserInfo(data: Data) {
-        if let json = try? JSON(data: data) {
-            let id = json["_id"].stringValue
-            let color = json["avatarColor"].stringValue
-            let avatarName = json["avatarName"].stringValue
-            let email = json["email"].stringValue
-            let name = json["name"].stringValue
-            
-            UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
-            
-        }
+        let json = JSON(data: data)
+        let id = json["_id"].stringValue
+        let color = json["avatarColor"].stringValue
+        let avatarName = json["avatarName"].stringValue
+        let email = json["email"].stringValue
+        let name = json["name"].stringValue
+        
+        UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
+        
     }
     
 }

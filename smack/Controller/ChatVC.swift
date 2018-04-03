@@ -50,15 +50,6 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 }
             }
         }
-//        SocketService.instance.getChatMessage { (success) in
-//            if success {
-//                self.tableView.reloadData()
-//                if MessageService.instance.messages.count > 0 {
-//                    let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
-//                    self.tableView.scrollToRow(at: endIndex, at: .bottom, animated: false)
-//                }
-//            }
-//        }
         
         SocketService.instance.getTypingUser { (typingUsers) in
             guard let channelId = MessageService.instance.selectedChannel?.id else { return }
@@ -83,8 +74,6 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             } else {
                 self.typingUsersLbl.text = ""
             }
-            
-            
         }
         
         if AuthService.instance.isLoggedIn {
@@ -94,7 +83,6 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         } else {
             channelNameLbl.text = "Please log in"
         }
-  
     }
     
     @objc func handleTap() {
@@ -120,7 +108,6 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         getMessages()
     }
     
-    
     @IBAction func messageBoxEditing(_ sender: Any) {
         guard let channelId = MessageService.instance.selectedChannel?.id else { return }
         if messageTxtBox.text == "" {
@@ -142,7 +129,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             guard let message = messageTxtBox.text else { return }
             
             SocketService.instance.addMessage(messageBody: message, userId: UserDataService.instance.id, channelId: channelId, completion: { (success) in
-                 self.messageTxtBox.text = ""
+                self.messageTxtBox.text = ""
                 self.messageTxtBox.resignFirstResponder()
                 SocketService.instance.socket.emit("stopType", UserDataService.instance.name, channelId)
             })
@@ -190,15 +177,6 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MessageService.instance.messages.count
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
    
 

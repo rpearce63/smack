@@ -23,7 +23,6 @@ class UserDataService {
         self.avatarName = avatarName
         self.email = email
         self.name = name
-        
     }
     
     func setAvatarName(avatarName: String) {
@@ -31,7 +30,6 @@ class UserDataService {
     }
     
     func returnUIColor(components: String) -> UIColor {
-        //print(components)
         let scanner = Scanner(string: components)
         let skipped = CharacterSet(charactersIn: "[], ")
         let comma = CharacterSet(charactersIn: ",")
@@ -58,7 +56,6 @@ class UserDataService {
         let newUIColor = UIColor(red: rFloat, green: gFloat, blue: bFloat, alpha: aFloat)
         
         return newUIColor
-        
     }
     
     func logoutUser() {

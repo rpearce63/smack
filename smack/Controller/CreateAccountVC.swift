@@ -21,7 +21,6 @@ class CreateAccountVC: UIViewController {
     var avatarColor = "[0.5, 0.5, 0.5, 1]"
     var bgColor : UIColor?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -97,8 +96,5 @@ class CreateAccountVC: UIViewController {
     @objc func handleTap() {
         view.endEditing(true)
     }
-    
-    
-    
-    
+ 
 }

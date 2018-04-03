@@ -38,5 +38,4 @@ class AvatarCell: UICollectionViewCell {
         self.clipsToBounds = true
     }
     
-    
 }

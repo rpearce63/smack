@@ -13,13 +13,10 @@ class LoginVC: UIViewController {
     @IBOutlet weak var usernameTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        
     }
 
     @IBAction func closePressed(_ sender: Any) {

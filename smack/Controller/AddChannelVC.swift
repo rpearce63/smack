@@ -15,14 +15,11 @@ class AddChannelVC: UIViewController {
     @IBOutlet weak var chanDescTxt: UITextField!
     @IBOutlet weak var bgView: UIView!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        
     }
 
-    
     @IBAction func closeModalPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

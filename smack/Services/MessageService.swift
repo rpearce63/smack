@@ -36,15 +36,11 @@ class MessageService {
                     NotificationCenter.default.post(name: NOTIF_CHANNELS_LOADED, object: nil)
                     completion(true)
                 }
-                
-                
-                
             } else {
                 completion(false)
                 debugPrint(response.result.error as Any)
             }
-        }
-        
+        } 
     }
     
     func findAllMessagesForChannel(channelId: String, completion: @escaping CompletionHandler) {
@@ -66,7 +62,6 @@ class MessageService {
                         let message = Message(message: messageBody, userName: userName, channelId: channelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timeStamp: timeStamp)
                         self.messages.append(message)
                     }
-                    print(self.messages)
                     completion(true)
                 }
                 
@@ -84,17 +79,4 @@ class MessageService {
     func clearChannels() {
         channels.removeAll()
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

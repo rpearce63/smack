@@ -19,7 +19,6 @@ class SocketService: NSObject {
     var socket : SocketIOClient = SocketIOClient(socketURL: URL(string: BASE_URL)!)
     
     func establishConnection() {
-        print("connect socket")
         socket.connect()
     }
     
@@ -29,7 +28,6 @@ class SocketService: NSObject {
     
     func addChannel(channelName: String, channelDescription: String, completion: @escaping CompletionHandler) {
         socket.emit("newChannel", channelName, channelDescription)
-        print("emit newChannel")
         completion(true)
     }
     
@@ -65,7 +63,6 @@ class SocketService: NSObject {
             
             let newMessage = Message(message: messageBody, userName: userName, channelId: channelId, userAvatar: userAvatar,
                                      userAvatarColor: userAvatarColor, id: messageId, timeStamp: timeStamp)
-            
             completion(newMessage)
         }
     }
@@ -74,8 +71,6 @@ class SocketService: NSObject {
         socket.on("userTypingUpdate") { (dataArray, ack) in
             guard let typingUsers = dataArray[0] as? [String: String] else { return }
             completionHandler(typingUsers)
-            
         }
     }
-    
 }

@@ -24,7 +24,6 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelsLoaded(_:)), name: NOTIF_CHANNELS_LOADED, object: nil)
         
         SocketService.instance.getChannel { (success) in
-            print(MessageService.instance.channels)
             self.tableView.reloadData()
         }
         
@@ -33,7 +32,6 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 MessageService.instance.unreadChannels.append(newMessage.channelId)
                 self.tableView.reloadData()
             }
-            
         }
     }
     

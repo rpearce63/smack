@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "smack/Controller/ProfileVC.swift"
-            timestampString = "544508717.048689"
+            timestampString = "544538573.831148"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "updateUsernamePressed(_:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -44,7 +44,7 @@
                             </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="jse-5M-r31">
-                            <rect key="frame" x="104" y="50.5" width="127" height="220"/>
+                            <rect key="frame" x="104" y="53" width="127" height="215"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uh-RX-tJT">
                                     <rect key="frame" x="0.0" y="0.0" width="127" height="27.5"/>
@@ -60,20 +60,21 @@
                                     </constraints>
                                 </imageView>
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPW-wL-QZh">
-                                    <rect key="frame" x="0.0" y="155.5" width="127" height="30"/>
+                                    <rect key="frame" x="0.0" y="155.5" width="127" height="25"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RickP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUD-7A-JkX">
-                                            <rect key="frame" x="0.0" y="0.0" width="97" height="30"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="102" height="25"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7f-ao-unE">
-                                            <rect key="frame" x="97" y="0.0" width="30" height="30"/>
+                                            <rect key="frame" x="102" y="0.0" width="25" height="25"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="8iu-sc-GN8"/>
+                                                <constraint firstAttribute="width" constant="25" id="8iu-sc-GN8"/>
+                                                <constraint firstAttribute="height" constant="25" id="KM7-DR-AZg"/>
                                             </constraints>
-                                            <state key="normal" image="send"/>
+                                            <state key="normal" image="edit"/>
                                             <connections>
                                                 <action selector="editUsernamePressed:" destination="-1" eventType="touchUpInside" id="sZx-PQ-3j6"/>
                                             </connections>
@@ -81,18 +82,19 @@
                                     </subviews>
                                 </stackView>
                                 <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KgQ-6z-7Uv">
-                                    <rect key="frame" x="-11.5" y="192.5" width="150" height="0.0"/>
+                                    <rect key="frame" x="-9" y="187.5" width="145" height="25"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dNM-AH-hRz">
-                                            <rect key="frame" x="0.0" y="0.0" width="120" height="0.0"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="25"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0E-WZ-58Z">
-                                            <rect key="frame" x="120" y="0.0" width="30" height="0.0"/>
+                                            <rect key="frame" x="120" y="0.0" width="25" height="25"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="Wjk-Yj-GeI"/>
+                                                <constraint firstAttribute="height" constant="25" id="8wV-R5-LHh"/>
+                                                <constraint firstAttribute="width" constant="25" id="Wjk-Yj-GeI"/>
                                             </constraints>
                                             <state key="normal" image="send"/>
                                             <connections>
@@ -102,7 +104,7 @@
                                     </subviews>
                                 </stackView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rick@p.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ft-UV-64a">
-                                    <rect key="frame" x="16" y="199.5" width="95" height="20.5"/>
+                                    <rect key="frame" x="16" y="194.5" width="95" height="20.5"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                     <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -152,6 +154,7 @@
     </objects>
     <resources>
         <image name="closeButton" width="28" height="28"/>
+        <image name="edit" width="512" height="512"/>
         <image name="profileDefault" width="192" height="192"/>
         <image name="send" width="30" height="30"/>
     </resources>

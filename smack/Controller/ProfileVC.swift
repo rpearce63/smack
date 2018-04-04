@@ -12,6 +12,11 @@ class ProfileVC: UIViewController {
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var bgView: UIView!
+    @IBOutlet weak var userNameTxt: UITextField!
+    @IBOutlet weak var editUsernameBtn: UIButton!
+    @IBOutlet weak var updateUsernameBtn: UIButton!
+    @IBOutlet weak var usernameStack: UIStackView!
+    @IBOutlet weak var newUsernameStack: UIStackView!
     
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var username: UILabel!
@@ -35,6 +40,8 @@ class ProfileVC: UIViewController {
     func setupView() {
         profileImage.image = UIImage(named: UserDataService.instance.avatarName)
         profileImage.backgroundColor = UserDataService.instance.returnUIColor(components: UserDataService.instance.avatarColor)
+        usernameStack.isHidden = false
+        newUsernameStack.isHidden = true
         username.text = UserDataService.instance.name
         userEmail.text = UserDataService.instance.email
         let closeTouch = UITapGestureRecognizer(target: self, action: #selector(ProfileVC.closeTap(_:)))
@@ -45,4 +52,22 @@ class ProfileVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func updateUsernamePressed(_ sender: Any) {
+        let userId = UserDataService.instance.id
+        guard let newUserName = userNameTxt.text , userNameTxt.text != "" else { return }
+        AuthService.instance.updateUsername(userId: userId, newUsername: newUserName) { (success) in
+            if success {
+                UserDataService.instance.setUsername(newUsername: newUserName)
+                NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+                self.usernameStack.isHidden = false
+                self.newUsernameStack.isHidden = true
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
+    @IBAction func editUsernamePressed(_ sender: Any) {
+        usernameStack.isHidden = true
+        newUsernameStack.isHidden = false
+    }
 }

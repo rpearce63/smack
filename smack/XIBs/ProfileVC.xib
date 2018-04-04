@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue-Bold</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileVC" customModule="smack" customModuleProvider="target">
             <connections>
                 <outlet property="bgView" destination="2cB-W3-I2Q" id="XyT-SS-o0S"/>
+                <outlet property="editUsernameBtn" destination="O7f-ao-unE" id="328-0p-W5l"/>
+                <outlet property="newUsernameStack" destination="KgQ-6z-7Uv" id="dzs-cl-UzS"/>
                 <outlet property="profileImage" destination="QO1-TP-BJa" id="S2B-gA-r54"/>
+                <outlet property="updateUsernameBtn" destination="E0E-WZ-58Z" id="ksV-VU-QSz"/>
                 <outlet property="userEmail" destination="7ft-UV-64a" id="Yad-HE-rHl"/>
+                <outlet property="userNameTxt" destination="dNM-AH-hRz" id="yqL-fM-Iaw"/>
                 <outlet property="username" destination="gUD-7A-JkX" id="aVU-Os-sBs"/>
+                <outlet property="usernameStack" destination="PPW-wL-QZh" id="ys9-Yh-SDV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -44,7 +44,7 @@
                             </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="jse-5M-r31">
-                            <rect key="frame" x="104" y="55" width="127" height="210.5"/>
+                            <rect key="frame" x="104" y="50.5" width="127" height="220"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uh-RX-tJT">
                                     <rect key="frame" x="0.0" y="0.0" width="127" height="27.5"/>
@@ -59,19 +59,59 @@
                                         <constraint firstAttribute="height" constant="100" id="Y6r-C9-biK"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RickP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUD-7A-JkX">
-                                    <rect key="frame" x="39.5" y="155.5" width="48" height="20.5"/>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                    <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPW-wL-QZh">
+                                    <rect key="frame" x="0.0" y="155.5" width="127" height="30"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RickP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUD-7A-JkX">
+                                            <rect key="frame" x="0.0" y="0.0" width="97" height="30"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7f-ao-unE">
+                                            <rect key="frame" x="97" y="0.0" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="8iu-sc-GN8"/>
+                                            </constraints>
+                                            <state key="normal" image="send"/>
+                                            <connections>
+                                                <action selector="editUsernamePressed:" destination="-1" eventType="touchUpInside" id="sZx-PQ-3j6"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KgQ-6z-7Uv">
+                                    <rect key="frame" x="-11.5" y="192.5" width="150" height="0.0"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dNM-AH-hRz">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="0.0"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0E-WZ-58Z">
+                                            <rect key="frame" x="120" y="0.0" width="30" height="0.0"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="Wjk-Yj-GeI"/>
+                                            </constraints>
+                                            <state key="normal" image="send"/>
+                                            <connections>
+                                                <action selector="updateUsernamePressed:" destination="-1" eventType="touchUpInside" id="S7M-Hg-O6L"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rick@p.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ft-UV-64a">
-                                    <rect key="frame" x="16" y="190" width="95" height="20.5"/>
+                                    <rect key="frame" x="16" y="199.5" width="95" height="20.5"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                     <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="PPW-wL-QZh" secondAttribute="trailing" id="X87-FK-Ys3"/>
+                                <constraint firstItem="PPW-wL-QZh" firstAttribute="leading" secondItem="jse-5M-r31" secondAttribute="leading" id="lei-yN-3XO"/>
+                            </constraints>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yn-Ma-tRM">
                             <rect key="frame" x="134" y="316" width="67" height="36"/>
@@ -113,5 +153,6 @@
     <resources>
         <image name="closeButton" width="28" height="28"/>
         <image name="profileDefault" width="192" height="192"/>
+        <image name="send" width="30" height="30"/>
     </resources>
 </document>
